@@ -44,6 +44,19 @@ var summary = truncate.right(killbill, 20);
 // summary -> `her lover 'Bill'.`
 ```
 
+## Tests
+
+Donwload testing dependecies
+
+```
+npm install
+```
+
+Run tests
+
+```
+make test
+```
 
 ## License
 
