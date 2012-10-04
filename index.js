@@ -19,11 +19,15 @@ function truncate(str, chars, left){
   if (!str || !str.length || str.length <= chars) return str;
 
   left = left !== false;
-  var cutted = cut(str, chars, left);
-  if (!cutted[1]) {
-    cutted[0] = cutted[0].replace(left ? /\s*[^\s|.]*$/ : /^[^\s|.]*\s*/, '');
+  var mod = false !== left ? 0 : 1;
+  var end = !mod ? chars : str.length - chars;
+  var new_str = str.substring(!mod ? 0 : str.length, end);
+  var perfect = str[end] == ' ';
+
+  if (!perfect) {
+    new_str = new_str.replace(left ? /\s*[^\s|.]*$/ : /^[^\s|.]*\s*/, '');
   }
-  return cutted[0];
+  return new_str;
 }
 
 /**
@@ -49,19 +53,3 @@ exports.left = truncate;
 exports.right = function(str, chars){
   return truncate(str, chars, false);
 };
-
-/**
- * Cut the given string from left or right side
- *
- * @param {String} string
- * @param {Number} chars
- * @param {Boolen} left (default true)
- * @return {Array}
- * @api private
- */
-
-function cut(str, chars, left){
-  var mod = false !== left ? 0 : 1;
-  var end = !mod ? chars : str.length - chars;
-  return [str.substring(!mod ? 0 : str.length, end), str[end] == ' '];
-}
