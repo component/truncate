@@ -1,0 +1,13 @@
+{
+  "name": "truncate",
+  "repo": "component/truncate",
+  "description": "Truncate string component",
+  "author": "Damian Suarez <rdsuarez@gmail.com>",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "scripts": [
+    "index.js"
+  ]
+}
