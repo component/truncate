@@ -46,7 +46,7 @@ var summary = truncate.right(killbill, 20);
 
 ## Tests
 
-Donwload testing dependecies
+Download testing dependecies
 
 ```
 npm install
