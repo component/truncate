@@ -11,10 +11,12 @@ exports = module.exports = truncate;
  *
  * @param {String} str
  * @param {Number} chars (default 200 chars)
+ * @param {String} sufix string to add to summary
  * @return {Object}
  */
 
-function truncate(str, chars, left){
+function truncate(str, chars, sufix, left){
+  sufix = sufix || '';
   chars = chars || 200;
   if (!str || !str.length || str.length <= chars) return str;
 
@@ -27,7 +29,7 @@ function truncate(str, chars, left){
   if (!perfect) {
     new_str = new_str.replace(left ? /\s*[^\s|.]*$/ : /^[^\s|.]*\s*/, '');
   }
-  return new_str;
+  return left ? new_str + sufix : sufix + new_str;
 }
 
 /**
@@ -47,9 +49,10 @@ exports.left = truncate;
  *
  * @param {String} str
  * @param {Number} chars (default 200 chars)
+ * @param {String} prefix string prefix to add to summary
  * @api public
  */
 
-exports.right = function(str, chars){
-  return truncate(str, chars, false);
+exports.right = function(str, chars, prefix){
+  return truncate(str, chars, prefix, false);
 };
