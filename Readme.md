@@ -24,7 +24,7 @@ should truncate leading / trailing whitespace.
 ```js
 var truncate = require('truncate');
 
-var killbill = "The lead character, called 'The Bride', was a member of the Deadly Viper Assassination Squad, lead by her lover 'Bill'.";
+var killbill = "The lead character, called 'The Bride', was a member of the Deadly Viper Assassination Squad, lead by her lover `Bill`.";
 
 var summary = truncate(killbill, 20);
 // summary -> `The lead character,`
@@ -34,14 +34,14 @@ var summary = truncate(killbill, 20);
 ### truncate.left(str)
 ```js
 var summary = truncate.left(killbill, 20);
-// summary -> `The lead character,`
+// summary -> 'The lead character,'
 ```
 
 <a name="rightstr" />
 ### truncate.right(str)
 ```js
 var summary = truncate.right(killbill, 20);
-// summary -> `her lover 'Bill'.`
+// summary -> 'her lover `Bill`.'
 ```
 
 ## Tests
