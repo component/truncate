@@ -63,7 +63,62 @@ describe('truncate.right(string, 20, \'... \')', function(){
 });
 
 describe('truncate.right(string, 20, \'… \')', function(){
-  it('should return a string equal to \'… her lover `Bill`.', function(){
+  it('should return a string equal to \'… her lover `Bill`.\'', function(){
     truncate.right(killbill, 20, '… ').should.be.equal('… her lover `Bill`.');
+  });
+});
+
+var rhapsody = "Is this the real life?\n"
+             + "Is this just fantasy?\n"
+             + "Caught in a landslide\n"
+             + "No escape from reality\n"
+             + "Open your eyes\n"
+             + "Look up to the skies and see\n"
+             + "I'm just a poor boy, I need no sympathy\n"
+             + "Because I'm easy come, easy go\n"
+             + "Little high, little low\n"
+             + "Any way the wind blows, doesn't really matter to me, to me.\n";
+
+var left_part = "Is this the real life?\n"
+              + "Is this just fantasy?\n"
+              + "Caught in a landslide\n"
+              + "No escape from reality\n"
+              + "Open your eyes\n"
+              + "Look up to the skies and see\n"
+              + "I'm just a poor boy, I need no sympathy\n"
+              + "Because I'm easy come,";
+
+var right_part  = "Open your eyes\n"
+                + "Look up to the skies and see\n"
+                + "I'm just a poor boy, I need no sympathy\n"
+                + "Because I'm easy come, easy go\n"
+                + "Little high, little low\n"
+                + "Any way the wind blows, doesn't really matter to me, to me.\n";
+
+describe('truncate(string)', function(){
+  it('should return a string equal to left part of `Bohemiam rhapsody`', function(){
+    truncate(rhapsody).should.be.equal(left_part);
+  });
+
+  it('should return a string less or equal to 200 chars', function(){
+    truncate(rhapsody).length.should.be.below(201);
+  });
+
+  it('should return a string equal to left part of `Bohemiam rhapsody` plus \'...\'', function(){
+    truncate(rhapsody, ' ...').should.be.equal(left_part + ' ...');
+  });
+});
+
+describe('truncate.right(string)', function(){
+  it('should return a string equal to rigth part of `Bohemiam rhapsody`', function(){
+    truncate.right(rhapsody).should.be.equal(right_part);
+  });
+
+  it('should return a string less or equal to 200 chars', function(){
+    truncate.right(rhapsody).length.should.be.below(201);
+  });
+
+  it('should return a string equal to \'... \' plus right part of `Bohemiam rhapsody`.', function(){
+    truncate.right(rhapsody, '... ').should.be.equal('... ' + right_part);
   });
 });
