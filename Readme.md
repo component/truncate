@@ -27,7 +27,12 @@ var truncate = require('truncate');
 truncate('Hello world there', 15, ' ...'); // 'Hello world ...'
 ```
 
-### truncate.left = truncate
+### truncate.left(str)
+
+```js
+var truncate = require('truncate');
+truncate.left('Hello world there', 15); // Equivalent to truncate() 'Hello world'
+```
 
 ### truncate.right(str, chars)
 
