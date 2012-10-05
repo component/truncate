@@ -13,53 +13,34 @@ $ component install component/truncate
 
 ## API
 
-### truncate(str)
-
-```js
-var truncate = require('truncate');
-
-var killbill = 'The lead character, called `The Bride`, was a member of the Deadly Viper Assassination Squad, lead by her lover `Bill`.';
-
-var summary = truncate(killbill);
-// summary (200 chars) -> 'The lead character, called `The Bride`, was a member of the Deadly Viper Assassination Squad, lead by her lover `Bill`.'
-```
-
 ### truncate(str, chars)
 
 ```js
-var summary = truncate(killbill, 20);
-// summary (20 chars) -> 'The lead character,'
+var truncate = require('truncate');
+truncate('Hello world there', 15); // 'Hello world'
 ```
 
 ### truncate(str, chars, suffix)
 
 ```js
-var summary = truncate(killbill, 20 ' ...');
-// summary -> 'The lead character, ...'
+var truncate = require('truncate');
+truncate('Hello world there', 15, ' ...'); // 'Hello world ...'
 ```
 
 ### truncate.left = truncate
 
-
-### truncate.right(str)
-
-```js
-var summary = truncate.right(killbill);
-// summary (200 chars) -> 'The lead character, called `The Bride`, was a member of the Deadly Viper Assassination Squad, lead by her lover `Bill`.'
-```
-
-### truncate.right(str, 20)
+### truncate.right(str, chars)
 
 ```js
-var summary = truncate.right(killbill, 20);
-// summary (20 chars) -> 'her lover `Bill`.'
+var truncate = require('truncate');
+truncate.right('Hello world there', 15); // 'world there'
 ```
 
 ### truncate.right(str, chars, prefix)
 
 ```js
-var summary = truncate.right(killbill, 20, '... ');
-// summary (20 chars, '... ') -> '... her lover `Bill`.'
+var truncate = require('truncate');
+truncate.right('Hello world there', 15, '... '); // '... world there'
 ```
 
 ## Tests
