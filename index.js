@@ -16,8 +16,10 @@ exports = module.exports = truncate;
  */
 
 function truncate(str, chars, sufix, left){
+  sufix = 'string' == typeof chars ? chars : sufix;
+  chars = 'number' == typeof chars ? chars : 200;
+
   sufix = sufix || '';
-  chars = chars || 200;
   if (!str || !str.length || str.length <= chars) return str;
 
   left = left !== false;
