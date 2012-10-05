@@ -1,0 +1,14 @@
+
+{
+  "name": "truncate",
+  "version": "0.0.1",
+  "description": "Truncate string component",
+  "author": "Damian Suarez <rdsuarez@gmail.com>",
+  "keywords": ["component", "string", "truncate"],
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "main": "index"
+}

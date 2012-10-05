@@ -1,7 +1,7 @@
 
 # Truncate
 
-  Truncate the given string in less or equal length to the given characters
+  String truncation utility…
 
 ## Installation
 
@@ -12,43 +12,59 @@ $ component install component/truncate
 
 ## API
 
-   - [truncate(str)](#truncatestr)
-   - [truncate.left(str)](#leftstr)
-   - [truncate.right(str)](#rightstr)
-<a name="" />
-
-<a name="truncatestr" />
-### truncate(str)
-should truncate leading / trailing whitespace.
+### truncate(str, chars)
 
 ```js
 var truncate = require('truncate');
-
-var killbill = "The lead character, called 'The Bride', was a member of the Deadly Viper Assassination Squad, lead by her lover 'Bill'.";
-
-var summary = truncate(killbill, 20);
-// summary -> `The lead character,`
+truncate('Hello world there', 15); // 'Hello world'
 ```
 
-<a name="leftstr" />
+### truncate(str, chars, suffix)
+
+```js
+var truncate = require('truncate');
+truncate('Hello world there', 15, ' ...'); // 'Hello world ...'
+```
+
 ### truncate.left(str)
+
 ```js
-var summary = truncate.left(killbill, 20);
-// summary -> `The lead character,`
+var truncate = require('truncate');
+truncate.left('Hello world there', 15); // Equivalent to truncate() 'Hello world'
 ```
 
-<a name="rightstr" />
-### truncate.right(str)
+### truncate.right(str, chars)
+
 ```js
-var summary = truncate.right(killbill, 20);
-// summary -> `her lover 'Bill'.`
+var truncate = require('truncate');
+truncate.right('Hello world there', 15); // 'world there'
 ```
 
+### truncate.right(str, chars, prefix)
+
+```js
+var truncate = require('truncate');
+truncate.right('Hello world there', 15, '... '); // '... world there'
+```
+
+## Tests
+
+Download testing dependecies
+
+```
+npm install
+```
+
+Run tests
+
+```
+make test
+```
 
 ## License
 
 (The MIT License)
-Copyright(c) 2012 Damian Suarez <rdsuarez@gmail.com>
+Copyright(c) 2012 Damian Suarez &lt;rdsuarez@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
