@@ -1,8 +1,7 @@
 
 # Truncate
 
-  Truncate the given string in less or equal length to the given characters
-  number (default 200);
+  String truncation utility…
 
 ## Installation
 
