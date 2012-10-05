@@ -53,6 +53,7 @@ var summary = truncate.right(killbill);
 ```js
 var summary = truncate.right(killbill, 20);
 // summary (20 chars) -> 'her lover `Bill`.'
+```
 
 ### truncate.right(str, chars, prefix)
 
