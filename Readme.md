@@ -2,6 +2,7 @@
 # Truncate
 
   Truncate the given string in less or equal length to the given characters
+  number (default 200);
 
 ## Installation
 
@@ -12,36 +13,52 @@ $ component install component/truncate
 
 ## API
 
-   - [truncate(str)](#truncatestr)
-   - [truncate.left(str)](#leftstr)
-   - [truncate.right(str)](#rightstr)
-<a name="" />
-
-<a name="truncatestr" />
 ### truncate(str)
-should truncate leading / trailing whitespace.
 
 ```js
 var truncate = require('truncate');
 
-var killbill = "The lead character, called 'The Bride', was a member of the Deadly Viper Assassination Squad, lead by her lover `Bill`.";
+var killbill = 'The lead character, called `The Bride`, was a member of the Deadly Viper Assassination Squad, lead by her lover `Bill`.';
 
-var summary = truncate(killbill, 20);
-// summary -> `The lead character,`
+var summary = truncate(killbill);
+// summary (200 chars) -> 'The lead character, called `The Bride`, was a member of the Deadly Viper Assassination Squad, lead by her lover `Bill`.'
 ```
 
-<a name="leftstr" />
-### truncate.left(str)
+### truncate(str, chars)
+
 ```js
-var summary = truncate.left(killbill, 20);
-// summary -> 'The lead character,'
+var summary = truncate(killbill, 20);
+// summary (20 chars) -> 'The lead character,'
 ```
 
-<a name="rightstr" />
+### truncate(str, chars, sufix)
+
+```js
+var summary = truncate(killbill, 20 ' ...');
+// summary -> 'The lead character, ...'
+```
+
+### truncate.left = truncate
+
+
 ### truncate.right(str)
+
+```js
+var summary = truncate.right(killbill);
+// summary (200 chars) -> 'The lead character, called `The Bride`, was a member of the Deadly Viper Assassination Squad, lead by her lover `Bill`.'
+```
+
+### truncate.right(str, 20)
+
 ```js
 var summary = truncate.right(killbill, 20);
-// summary -> 'her lover `Bill`.'
+// summary (20 chars) -> 'her lover `Bill`.'
+
+### truncate.right(str, chars, prefix)
+
+```js
+var summary = truncate.right(killbill, 20, '... ');
+// summary (20 chars, '... ') -> '... her lover `Bill`.'
 ```
 
 ## Tests

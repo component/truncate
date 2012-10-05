@@ -7,7 +7,7 @@ exports = module.exports = truncate;
 
 /**
  * Truncate the given string in less or equal length to the given characters
- * starting from left side.
+ * starting from LEFT side.
  *
  * @param {String} str
  * @param {Number} chars (default 200 chars)
@@ -35,12 +35,7 @@ function truncate(str, chars, sufix, left){
 }
 
 /**
- * Truncate the given string in less or equal length to the given characters
- * starting from LEFT side.
- *
- * @param {String} str
- * @param {Number} chars (default 200 chars)
- * @api public
+ * See <truncate>
  */
 
 exports.left = truncate;
