@@ -1,8 +1,8 @@
 
 {
   "name": "truncate",
-  "version": "0.0.1",
-  "description": "Truncate string component",
+  "version": "0.1.0",
+  "description": "String truncation utility ...",
   "author": "Damian Suarez <rdsuarez@gmail.com>",
   "keywords": ["component", "string", "truncate"],
   "dependencies": {},

@@ -1,9 +1,9 @@
 {
   "name": "truncate",
   "repo": "component/truncate",
-  "description": "Truncate string component",
+  "description": "String truncation utility ...",
   "author": "Damian Suarez <rdsuarez@gmail.com>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "keywords": [],
   "dependencies": {},
   "development": {},
