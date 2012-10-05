@@ -11,15 +11,15 @@ exports = module.exports = truncate;
  *
  * @param {String} str
  * @param {Number} chars (default 200 chars)
- * @param {String} sufix string to add to summary
+ * @param {String} suffix string to add to summary
  * @return {Object}
  */
 
-function truncate(str, chars, sufix, left){
-  sufix = 'string' == typeof chars ? chars : sufix;
+function truncate(str, chars, suffix, left){
+  suffix = 'string' == typeof chars ? chars : suffix;
   chars = 'number' == typeof chars ? chars : 200;
 
-  sufix = sufix || '';
+  suffix = suffix || '';
   if (!str || !str.length || str.length <= chars) return str;
 
   left = left !== false;
@@ -31,7 +31,7 @@ function truncate(str, chars, sufix, left){
   if (!perfect) {
     new_str = new_str.replace(left ? /\s*[^\s|.]*$/ : /^[^\s|.]*\s*/, '');
   }
-  return left ? new_str + sufix : sufix + new_str;
+  return left ? new_str + suffix : suffix + new_str;
 }
 
 /**

@@ -31,7 +31,7 @@ var summary = truncate(killbill, 20);
 // summary (20 chars) -> 'The lead character,'
 ```
 
-### truncate(str, chars, sufix)
+### truncate(str, chars, suffix)
 
 ```js
 var summary = truncate(killbill, 20 ' ...');
