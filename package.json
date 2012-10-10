@@ -1,6 +1,6 @@
 
 {
-  "name": "truncate",
+  "name": "truncate-component",
   "version": "0.1.0",
   "description": "String truncation utility ...",
   "author": "Damian Suarez <rdsuarez@gmail.com>",
