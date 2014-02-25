@@ -23,13 +23,17 @@ function truncate(str, chars, suffix, left){
   if (!str || !str.length || str.length <= chars) return str;
 
   left = left !== false;
-  var mod = false !== left ? 0 : 1;
-  var end = !mod ? chars : str.length - chars;
-  var new_str = str.substring(!mod ? 0 : str.length, end);
-  var perfect = str[end] == ' ';
+  var mod = left ? 0 : 1;
+  var end = mod ? str.length - chars : chars;
+  var new_str = str.substring(mod ? str.length : 0, end);
+  var perfect = left
+    ? str[end] == ' '
+    : (str[end - 1] == ' ');
 
   if (!perfect) {
-    new_str = new_str.replace(left ? /\s*[^\s|.]*$/ : /^[^\s|.]*\s*/, '');
+    new_str = new_str.replace(left
+      ? /\s*[^\s|.]*$/
+      : /^[^\s|.]*\s*/, '');
   }
   return left ? new_str + suffix : suffix + new_str;
 }

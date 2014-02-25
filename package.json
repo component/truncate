@@ -13,9 +13,11 @@
     "mocha": "*",
     "should": "*"
   },
-  "main": "index",
   "repository": {
     "type": "git",
     "url": "https://github.com/component/truncate.git"
+  },
+  "scripts": {
+    "test": "make test"
   }
 }

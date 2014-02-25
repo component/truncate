@@ -57,14 +57,14 @@ describe('truncate.right(string, 20)', function(){
 })
 
 describe('truncate.right(string, 20, \'... \')', function(){
-  it('should return a string equal to \'... her lover `Bill`.\'', function(){
-    truncate.right(killbill, 20, '... ').should.be.equal('... her lover `Bill`.');
+  it('should return a string equal to \'... by her lover `Bill`.\'', function(){
+    truncate.right(killbill, 20, '... ').should.be.equal('... by her lover `Bill`.');
   });
 });
 
 describe('truncate.right(string, 20, \'… \')', function(){
-  it('should return a string equal to \'… her lover `Bill`.\'', function(){
-    truncate.right(killbill, 20, '… ').should.be.equal('… her lover `Bill`.');
+  it('should return a string equal to \'… by her lover `Bill`.\'', function(){
+    truncate.right(killbill, 20, '… ').should.be.equal('… by her lover `Bill`.');
   });
 });
 
